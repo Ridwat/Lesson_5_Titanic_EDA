@@ -1,61 +1,53 @@
-# Lesson 5 – Titanic Dataset Exploratory Data Analysis
+# Titanic Survival: Exploratory Data Analysis
 
-This project demonstrates the use of **Pandas** for data manipulation and **Matplotlib** for data visualization, using the classic **Titanic dataset**.  
-It was completed as part of Lesson 5 in the Data Analytics & AI course.
+**Adetola Ridwat Odulaja** · Academic analytics project
 
----
+An exploration of survival patterns in Titanic passenger data, combining data preparation, feature engineering, grouped analysis, and visual communication.
 
-## 📘 Objectives
-- Load and explore the Titanic dataset  
-- Clean and preprocess missing values  
-- Create new derived features (`PclassCategory`, `CabinCategory`, `Family`)  
-- Analyze survival patterns by demographic and class  
-- Use visualization to uncover relationships in the data  
+**Focus:** Data quality · Exploratory analysis · Interpreting patterns
 
----
+## Question
 
-## 🧹 Data Cleaning
-- Filled missing values in the `Age` column using the mean  
-- Extracted deck letters from the `Cabin` column (fallback: “Unknown”)  
-- Created a categorical `PclassCategory` from passenger class (1, 2, 3)  
-- Computed `Family` size as `SibSp + Parch + 1`  
+How do survival rates vary by passenger sex and class, and what do age, fare, and family-size distributions reveal about the dataset?
 
----
+## Approach
 
-## 📊 Visualizations
-- **Histogram** of passenger ages  
-- **Bar chart** of survival rates by class  
-- **Heatmap** of correlations between numerical features  
-- **Pair plot** (scatter matrix) of `Age`, `Fare`, `SibSp`, and `Parch`  
-- **Box plot** of age distribution by class and sex  
-- **Violin plot** of fare distribution by survival status  
+- Load passenger data and inspect its structure.
+- Fill missing ages with the mean where required.
+- Create passenger-class categories and a family-size feature.
+- Handle the absence of cabin information explicitly.
+- Compare survival rates and visualize distributions, correlations, and outliers.
+- Export a cleaned CSV for reuse.
 
----
+## Recorded results
 
-## 💡 Key Insights
-- Higher survival among **females** and **1st-class** passengers  
-- **Fare** and **Pclass** show strong inverse correlation  
-- Most passengers were aged **20–35 years**  
-- A few high-fare outliers correspond to shared luxury cabins  
+The saved notebook output reports:
 
----
+| Group | Survival rate |
+|---|---:|
+| Female | 74.2% |
+| Male | 19.0% |
+| First class | 63.0% |
+| Second class | 47.3% |
+| Third class | 24.4% |
 
-## 🛠️ Tools Used
-- Python 3  
-- Pandas  
-- NumPy  
-- Matplotlib  
+These are descriptive associations within the dataset. They do not establish causation.
 
+## Why it matters
 
----
+The project demonstrates how to turn raw records into interpretable comparisons, while keeping data preparation decisions visible—skills applicable to KPI validation and business reporting.
 
-## 📂 Files Included
-- `Lesson_5_Assignment.ipynb` – main Colab notebook  
-- `titanic_cleaned.csv` – cleaned dataset 
-- `README.md` – project summary  
+## Explore the work
 
----
+- [Analysis notebook](Lesson_5_Titanic_EDA.ipynb)
+- [Cleaned dataset](titanic_cleaned.csv)
 
-## 📎 Author
-**Adetola Ridwat Odulaja**  
-Diploma in Data Analytics & AI, Willis College, Ottawa  
+## Run
+
+Open the notebook in Google Colab and run the cells in sequence. It uses Python, Pandas, NumPy, Matplotlib, and Seaborn and downloads the source data from the URL embedded in the notebook.
+
+## Limitations
+
+The source has a different schema from some Titanic datasets. Cabin categories default to “Unknown” when no cabin column exists. Mean imputation can affect age distributions. Recorded results are from the saved run; this documentation update did not rerun the notebook.
+
+[Explore my portfolio](https://github.com/Ridwat/Ethical-AI-Analysis/blob/main/PORTFOLIO.md)
